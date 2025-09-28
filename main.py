@@ -3,11 +3,9 @@ import requests
 from dotenv import load_dotenv
 import os
 from datetime import datetime, timedelta
-from twilio.rest import Client
 from pprint import pprint
 from data_manager import DataManager
 from flight_search import FlightSearch
-from flight_data import FlightData
 import time  # Import time module for sleep functionality
 from notification_manager import NotificationManager
 
@@ -17,10 +15,6 @@ notification_manager = NotificationManager()
 
 # --- ENV VARS ---
 load_dotenv()
-account_sid = os.getenv("TWILIO_ACCOUNT_SID")
-auth_token = os.getenv("TWILIO_AUTH_TOKEN")
-from_number = os.getenv("TWILIO_FROM")
-to_number = os.getenv("TWILIO_TO")
 app_id = os.getenv("APP_ID")
 sheety_api_key = os.getenv("SHEETY_API_KEY")
 
